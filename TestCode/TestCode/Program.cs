@@ -1,5 +1,8 @@
 ﻿namespace TestCode
 {
+    using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// The program.
     /// </summary>
@@ -13,15 +16,26 @@
         /// </param>
         public static void Main(string[] args)
         {
-            var head = LinkedList.Generate(10);
+            const int Length = 10;
+            const int Index = 4;
 
-            var node = LinkedList.Nodes.GetNodeAtIndexFromEnd(1, head);
+            // our expected value should be our Length - our expected index.
+            const int ExpectedValue = Length - Index;
 
-            System.Console.WriteLine(node.Value);
+            // generate linked list of the passed length,
+            // function will return the first node in the list[head].
+            var head = LinkedList.Generate(Length);
+            
+            // get the node at the passed index.
+            var node = LinkedList.Nodes.GetNodeAtIndexFromEnd(Index, head);
 
-            System.Console.WriteLine("Press Enter To Exit.");
+            // test the value of the node equals our expected value.
+            Debug.Assert(node.Value.Equals(ExpectedValue), "node.value doesnt equal expected value");
 
-            System.Console.ReadLine();
+            // write the value to the console.
+            Console.WriteLine(node.Value);
+            Console.WriteLine("Press Enter To Exit.");
+            Console.ReadLine();
         }
     }
 }
