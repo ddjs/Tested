@@ -96,7 +96,6 @@
                 // set our response Node reference to the Head.
                 var response = (Nodes)head.Pointer;
 
-
                 if (response == null)
                 {
                     throw new ArgumentNullException("head", "Cannot be a null value");

@@ -16,6 +16,11 @@
         /// </param>
         public static void Main(string[] args)
         {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(SentenceMaker.Generate());
+            }
+
             const int Length = 10;
             const int Index = 4;
 
