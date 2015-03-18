@@ -1,0 +1,27 @@
+﻿<Window x:Class="SW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Stop Watch" Height="350" Width="525" x:Name="Root">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Viewbox>
+            <TextBlock Text="{Binding Time, ElementName=Root, StringFormat=\{0:hh\\:mm\\:ss\\:ff\}}" />
+        </Viewbox>
+        
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Start" Click="ActionButtonPressed" Uid="1" />
+            <Button Content=" Stop" Click="ActionButtonPressed" Uid="2" Grid.Column="1" />
+
+        </Grid>
+    </Grid>
+</Window>
+ 
